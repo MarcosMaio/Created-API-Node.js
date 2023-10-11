@@ -9,9 +9,13 @@
 //server.listen(3333)
 
 import { fastify } from 'fastify'
-import { DatabasePostgres } from './database-postegres.js'
+import cors from '@fastify/cors'
+import { DatabasePostgres } from './database-postgres.js'
 
 const server = fastify()
+server.register(cors, {
+    origin: true
+})
 
 //const database = new DatabaseMemory()
 

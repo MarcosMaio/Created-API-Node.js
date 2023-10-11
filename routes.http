@@ -1,0 +1,30 @@
+POST http://localhost:3333/characters
+Content-Type: application/json
+
+{
+    "name": "Jinbe",
+    "description": "Knight of the Sea Jinbe is the helmsman of the Straw Hat Pirates. He is the tenth member of the crew. Jinbe is a fish-man, specifically a whale shark, and a powerful master of Fish-Man Karate. His dream is to fulfill his late captain Fisher Tiger's dying wish for coexistence and equality between humans and fish-men. He currently has a bounty of 1,100,000,000.",
+    "image": "static/img/Jinbe-Bg-Character.png"
+
+}
+
+
+###
+
+GET http://localhost:3333/characters
+
+###
+
+PUT http://localhost:3333/characters/3
+Content-Type: application/json
+
+{
+    "name": "Vinsmoke Sanji",
+    "description": "Black Leg Sanji, born as Vinsmoke Sanji, is also the cook of the Straw Hat Pirates. He is the third son and fourth child of the Vinsmoke Family, making him a prince of the Germa Kingdom until he officially renounced them twice. Despite Sanji renouncing his Vinsmoke surname, the World Government labels it as part of his name on his wanted poster. Due to the events on Whole Cake Island, his current bounty is 1.032.000.000, making him the fourth highest bounty in the crew.",
+    "image": "static/img/Sanji-Bg-Character.png"
+}
+
+
+###
+
+DELETE http://localhost:3333/characters/2

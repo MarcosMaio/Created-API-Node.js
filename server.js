@@ -11,11 +11,24 @@
 import { fastify } from 'fastify'
 import cors from '@fastify/cors'
 import { DatabasePostgres } from './database-postgres.js'
+import path from 'path';
+import fastifyStatic from '@fastify/static';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url); 
+const __dirname = path.dirname(__filename); 
+
 
 const server = fastify()
+
 server.register(cors, {
     origin: true
 })
+
+server.register(fastifyStatic, {
+    root: path.join(__dirname, 'static'),
+    prefix: '/static/'
+});
 
 //const database = new DatabaseMemory()
 
@@ -34,11 +47,18 @@ server.post('/characters', async (request, reply) => {
 })
 
 server.get('/characters', async () => {
-    const characters = await database.list()
+    const characters = await database.list();
 
-    return characters
-})
+    
+    const charactersWithFullImageURLs = characters.map((character) => {
+        return {
+            ...character,
+            image: `https://created-api-node-js.onrender.com/${character.image}`
+        };
+    });
 
+    return charactersWithFullImageURLs;
+});
 server.put('/characters/:id', async (request, reply) => {
     const charactersId = request.params.id
     const {name, description, image} = request.body

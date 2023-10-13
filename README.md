@@ -1,6 +1,6 @@
 # Created-API-Node.js - API Back-End
 
-O Created-API-Node.js é uma API desenvolvida com Node.js, PostgreSQL e Fastify, que fornece acesso a dados de personagens fictícios. Neste README, detalharemos o processo de criação desta API e as funcionalidades que oferece.
+O Created-API-Node.js é uma API desenvolvida com Node.js, PostgreSQL e Fastify, que fornece acesso a dados de personagens fictícios. detalharei a seguir o processo de criação desta API e as funcionalidades que oferece.
 
 ### Descrição Geral
 O projeto consiste na implementação de uma API em Node.js que utiliza o banco de dados PostgreSQL para armazenar informações sobre personagens fictícios. A API foi implantada em um servidor público acessível por meio do endereço: https://created-api-node-js.onrender.com/characters.
